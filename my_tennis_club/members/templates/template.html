@@ -1,5 +1,10 @@
-{% extends 'master.html' %}
-{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+
+<body>
 {% comment "" %}
 {% if greeting == 1 %}
 <h1>hello</h1>
@@ -38,7 +43,7 @@
     {% endfor %}
   </ul> 
 
-{% endcomment %}
+
 
 <table border = '1'>
   <tr>
@@ -54,7 +59,12 @@
     </tr>
     {%endfor%}
 </table>
+{% endcomment %}
+{% for x in members %}
+  <h1>{{ x }}</h1>
+{% endfor %}
 
 {% include "footer.html" %}
 
-{% endblock  %}
+</body>
+</html>
