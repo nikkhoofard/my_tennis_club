@@ -1,3 +1,5 @@
+{% extends 'master.html' %}
+{% block content %}
 {% if greeting == 1 %}
 <h1>hello</h1>
 
@@ -14,7 +16,7 @@
 
 </p>
 {% endfor %}
-
+{% comment "" %}
 <br>
 
 <ul>
@@ -22,7 +24,7 @@
       <li>{{ forloop.counter }}</li>
     {% endfor %}
   </ul> 
-
+{% endcomment %}
   <br>
 
   <ul>
@@ -34,3 +36,6 @@
       >{{ x }}</li>
     {% endfor %}
   </ul> 
+{% include "footer.html" %}
+
+{% endblock  %}
