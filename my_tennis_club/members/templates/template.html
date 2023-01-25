@@ -1,5 +1,6 @@
 {% extends 'master.html' %}
 {% block content %}
+{% comment "" %}
 {% if greeting == 1 %}
 <h1>hello</h1>
 
@@ -16,7 +17,7 @@
 
 </p>
 {% endfor %}
-{% comment "" %}
+
 <br>
 
 <ul>
@@ -24,7 +25,7 @@
       <li>{{ forloop.counter }}</li>
     {% endfor %}
   </ul> 
-{% endcomment %}
+
   <br>
 
   <ul>
@@ -36,6 +37,24 @@
       >{{ x }}</li>
     {% endfor %}
   </ul> 
+
+{% endcomment %}
+
+<table border = '1'>
+  <tr>
+    <th>ID</th>
+    <th>FirstName</th>
+    <th>Lastnname</th>
+  </tr>
+  {% for x in members %}
+    <tr>
+      <td>{{x.id}}</td>
+      <td>{{x.firstname}}</td>
+      <td>{{x.lastname}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
 {% include "footer.html" %}
 
 {% endblock  %}
