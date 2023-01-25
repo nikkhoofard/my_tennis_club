@@ -32,7 +32,7 @@ def main(request):
 
 
 def testing(request):
-	mydate = Member.objects.all()
+	mydate = Member.objects.all().order_by("firstname").values()
 	template = loader.get_template("template.html")
 	context ={
 		"members" : mydate
