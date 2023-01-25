@@ -31,3 +31,9 @@ def main(request):
 	return HttpResponse(template.render())
 
 
+def testing(request):
+	template = loader.get_template("template.html")
+	context ={}
+	return HttpResponse(template.render(context,request))
+
+
